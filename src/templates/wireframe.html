@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div id="root">
+        <!-- App will go in main -->
+        <section id="form-section">
+          <form>
+            <!-- All of the inputs: Title, URL, Desc(ription) & Rating. Submit button must also be included -->
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="e.g. Amazon Wishlist" />
+            <label for="url">Website</label>
+            <input
+              type="url"
+              id="url-link"
+              placeholder="e.g. https://www.Amazon.com"
+            />
+            <label for="desc">Description</label>
+            <input type="text" id="desc" placeholder="e.g. My Wishlist" />
+            <!-- Star rating would go here, but need to research how to do this. What input type? Need function and handler? Need to send as a number? -->
+            <input type="number" id="rating" min="1" max="5" />
+            <button type="submit" id="submit">Submit</button>
+            <!-- Should receive appropriate feedback when I cannot submit a bookmark
+            Check all validations in the API documentation (e.g. title and url field required) -->
+          </form>
+        </section>
+        <section id="filters">
+          <!-- This is where the filter will be located -->
+          <!-- Must have a filter for "minimum rating" that uses a dropdown... -->
+
+          <!-- Code the input and label here -->
+
+          <!-- Code the function here -->
+
+          <!-- Code the event handler here -->
+        </section>
+        <section id="list">
+          <!-- The list of bookmarks will render here. They must have a condensed AND expanded view. ****CONDENSED view will only show #title and #rating, while EXPANDED view will additionally display the description and a "visit site" link****** -->
+
+          <!-- Ensure that each bookmark ALSO has an option to remove it from the list. -->
+          <!-- Code the input and label here -->
+
+          <!-- Code the function here -->
+
+          <!-- Code the event handler here -->
+
+          <!-- Optional edit bookmark rating and description buttons here -->
+
+          <!-- Determine the selectors: Dropdown and submit to save space or have buttons that allow you to adjust them respectively -->
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
