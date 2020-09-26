@@ -3,16 +3,17 @@ import $ from 'jquery';
 import api from '../api/api';
 import render from '../render';
 import storage from '../store';
+import delButton from './handleDeleteButton';
 
 
 // grab data-bookmark-id attribute from an element by doing this 
 // const bookmarkId = $()----.data('bookmarkId');
-function deleteItem() {
-    $('li button').on('click', function (e) {
-        e.preventDefault();
-        return $(this).parent().data('bookmarkId');
-    });
-}
+// function deleteItem() {
+//     $('li button').on('click', function (e) {
+//         e.preventDefault();
+//         $(this).parent().data('bookmarkId');
+//     });
+// }
 
 function handleFormSubmit() {
     $("form").on("click", "#submit", async (e) => {
@@ -42,7 +43,7 @@ function handleFormSubmit() {
                 // console.log('weee bookmark from api', bookmark);
                 storage.addBookmarkToLocal(bookmark);
                 // call my render
-                return render.render();
+                return render();
             } catch(err) {
                 console.log(err)
             }
@@ -57,5 +58,5 @@ function handleFormSubmit() {
 
 export default {
     handleFormSubmit,
-    deleteItem
+    delButton
 };

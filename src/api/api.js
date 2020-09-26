@@ -1,5 +1,6 @@
 import storage from '../store';
 import handler from '../handlers/handleFormSubmit';
+import render from '../render';
 
 const BASE_URL = 'https://thinkful-list-api.herokuapp.com/josh/bookmarks'
 
@@ -11,6 +12,7 @@ async function getBookmarks() {
     } catch(err) {
         console.log(err);
     }
+    // render();
 }
 
 async function addBookmark(obj) {
@@ -30,20 +32,23 @@ async function addBookmark(obj) {
     }
 }
 
-function deleteBookmark() {
+async function deleteBookmark(itemId) {
+    
     try {
-        itemId = handler.deleteItem();
-        const res = await fetch(`${BASE_URL}/${itemId}`, {
+        return fetch(`${BASE_URL}/${itemId}`, {
             method: 'DELETE' 
-        }); 
+        });
     } catch(err) {
         console.log(err);
     }
+
+    return render();
 }
 
 export default {
 getBookmarks,
 addBookmark,
-deleteBookmark
+deleteBookmark,
+render
 
 };

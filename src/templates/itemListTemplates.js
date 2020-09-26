@@ -8,7 +8,7 @@ const itemList = () =>  {
     if (!bookmarks || !bookmarks.length) {
         console.log('no bookmarks are in the API');
         // returning here stops all the code below this if statement from executing
-        return;
+        return `You have no bookmarks saved.`;
     }
 
     let template = '';
